@@ -1,0 +1,9 @@
+Agx Build Process
+
+# could be e.g. 'origin' instead of 'kofa', see above
+git fetch kofa
+# again, could be 'origin' or something else
+git checkout -f kofa/blender-agx-poc
+git submodule update --init
+git clean -fdx
+git reset --hard
