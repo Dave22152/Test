@@ -1,0 +1,52 @@
+Clone and update:
+
+$ cd ~
+$ git clone git://github.com/darktable-org/darktable.git
+$ cd darktable
+$ git submodule init
+$ git submodule update
+
+To update:
+
+$ git pull
+
+or
+
+$ git pull --ff-only origin master
+
+Build script:
+
+$ ./build.sh
+
+Or the following for -O3 release optimization:
+
+$ ./build.sh --build-type Release
+
+Or, the following
+
+$ mkdir build
+$ cd build
+$ cmake -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/darktable ../.
+$ cmake --build .
+
+Create executable:
+$ cmake --build "/home/dave_/darktable/build" --target package
+
+
+
+Name application folder as "DT X.X.X+YYYY"
+Under AppData\Local create Darktable X.X.X+YYYY
+
+
+Shortcut:
+
+In Target: "C:\Program Files\darktable Dev X.X.XYYY\bin\darktable.exe" --configdir "C:\Users\dave_\AppData\Local\Darktable 3.5+2226"
+In Start in: "C:\Program Files\darktable Dev 3.5+2226"
+
+For debug, change target to: "C:\Program Files\darktable Dev X.X.XYYY\bin\darktable.exe" --configdir "C:\Users\dave_\AppData\Local\Darktable 3.5+2226" -d all  
+
+
+
+To speed things up
+
+Once I have it running I am able to use the build.sh script to do all the work. You run it from the darktable directory   via the command ./build.sh   when it is done it leave a line saying you must run this command to install...I substitute for the word install with the word package.                                                                                                                                                                                                                                                                                                                                                                                                    
